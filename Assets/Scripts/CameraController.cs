@@ -18,13 +18,13 @@ public class CameraController : MonoBehaviour
     private Vector3 currentRotation;
     private Vector3 smoothVelocity = Vector3.zero;
 
-    private float smoothTime = 0.2f;
+    private float smoothTime = 0.1f;
 
-    private Vector2 rotationXMinMax = new Vector2(-25, 25);
+    private Vector2 rotationXMinMax = new Vector2(-10, 30);
 
     private void Start()
     {
-        playerInput = target.GetComponent<InputReader>();
+        playerInput = target.GetComponentInParent<InputReader>();
     }
 
     private void Update()
@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         float mouseY = playerInput.lookAction.ReadValue<Vector2>().y * sensitivity;
 
         rotationY += mouseX;
-        rotationX += mouseY;
+        rotationX -= mouseY;
 
 
         rotationX = Mathf.Clamp(rotationX, rotationXMinMax.x, rotationXMinMax.y);

@@ -5,10 +5,10 @@ using UnityEngine.InputSystem;
 public class InputReader : MonoBehaviour
 {
     private PlayerInput playerInput;
-    public InputAction moveInput;
-    public InputAction jumpAction;
-    public InputAction runAction;
-    public InputAction lookAction;
+    [HideInInspector] public InputAction moveInput;
+    [HideInInspector] public InputAction jumpAction;
+    [HideInInspector] public InputAction runAction;
+    [HideInInspector] public InputAction lookAction;
 
     private void Start()
     {
@@ -19,8 +19,4 @@ public class InputReader : MonoBehaviour
         lookAction = playerInput.actions.FindAction("Look");
     }
 
-    private void Update()
-    {
-
-    }
 }
