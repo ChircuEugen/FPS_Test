@@ -8,17 +8,24 @@ public class PlayerShooter : MonoBehaviour
     public Weapon[] weapons;
     private InputReader playerInput;
 
+    private Transform cam;
+
     public GameObject weaponInventory;
     bool isInventoryOpen = false;
 
+    public Transform aimTarget;
+
     private void Awake()
     {
+        cam = Camera.main.transform;
         weapons = GetComponentsInChildren<Weapon>(true);
         playerInput = GetComponent<InputReader>();
     }
 
     private void Update()
     {
+        aimTarget.position = cam.position + cam.forward * 10;
+
         if(playerInput.shootAction.IsPressed())
         {
             weapons[currentWeapon].Shoot();

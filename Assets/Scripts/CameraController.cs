@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
 
     private float smoothTime = 0.1f;
 
-    private Vector2 rotationXMinMax = new Vector2(-15, 30);
+    private Vector2 rotationXMinMax = new Vector2(-20, 30);
 
     private void Start()
     {

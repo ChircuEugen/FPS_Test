@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 
 public class Weapon : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class Weapon : MonoBehaviour
 
     private Animator playerAnimator;
     private AudioSource audioSource;
+
+    public Rig rig;
+
 
     private void Start()
     {
@@ -73,8 +77,10 @@ public class Weapon : MonoBehaviour
         if (isReloading) yield break;
 
         isReloading = true;
+        rig.weight = 0f;
         playerAnimator.SetTrigger("Reloaded");
         yield return new WaitForSeconds(2.6f);
+        rig.weight = 1f;
         isReloading = false;
 
         if (totalBulletsLeft <= gunData.magazineSize)
