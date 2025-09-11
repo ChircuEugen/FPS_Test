@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65aa43bce23cfeb4f80a39aa87f08335, type: 3}
+  m_Name: M107
+  m_EditorClassIdentifier: 
+  damage: 75
+  fireRate: 0.75
+  magazineSize: 7
+  muzzleFlash: {fileID: 4057669948583769442, guid: a5d1fb57de9b1db4bb1c09d2ebe54ab0,
+    type: 3}
+  shootSound: {fileID: 8300000, guid: 13ce7a01c6bcce34fb81d22f6bbfbcbe, type: 3}

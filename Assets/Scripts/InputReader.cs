@@ -9,6 +9,9 @@ public class InputReader : MonoBehaviour
     [HideInInspector] public InputAction jumpAction;
     [HideInInspector] public InputAction runAction;
     [HideInInspector] public InputAction lookAction;
+    [HideInInspector] public InputAction shootAction;
+    [HideInInspector] public InputAction reloadAction;
+    [HideInInspector] public InputAction inventoryAction;
 
     private void Start()
     {
@@ -17,6 +20,9 @@ public class InputReader : MonoBehaviour
         jumpAction = playerInput.actions.FindAction("Jump");
         runAction = playerInput.actions.FindAction("Run");
         lookAction = playerInput.actions.FindAction("Look");
+        shootAction = playerInput.actions.FindAction("Shoot");
+        reloadAction = playerInput.actions.FindAction("Reload");
+        inventoryAction = playerInput.actions.FindAction("Inventory");
     }
 
 }
