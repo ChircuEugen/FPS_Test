@@ -20,7 +20,7 @@ public class EnemyAttackState : EnemyBaseState
         {
             timer = 0f;
             IDamageable playerHealth = manager.player.GetComponent<IDamageable>();
-            playerHealth.TakeDamage(manager.enemyDamage);
+            playerHealth.TakeDamage(manager.enemyDamage, manager.player.position);
         }
 
         if (Vector3.Distance(manager.transform.position, manager.player.position) > manager.attackDistance)

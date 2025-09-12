@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.UI;
 
 public class Weapon : MonoBehaviour
 {
@@ -23,9 +24,14 @@ public class Weapon : MonoBehaviour
     private AudioSource audioSource;
 
     public Rig rig;
+    public Text ammoText;
 
+    private void OnEnable()
+    {
+        UpdateAmmoUI();
+    }
 
-    private void Start()
+    private void Awake()
     {
         bulletInMagazine = gunData.magazineSize;
         cam = Camera.main;
@@ -53,8 +59,10 @@ public class Weapon : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit, 40, damageableLayer))
             {
                 IDamageable enemyHealth = hit.transform.GetComponent<IDamageable>();
-                enemyHealth.TakeDamage(gunData.damage);
+                enemyHealth.TakeDamage(gunData.damage, hit.point);
             }
+
+            UpdateAmmoUI();
         }
     }
 
@@ -77,6 +85,7 @@ public class Weapon : MonoBehaviour
     {
         if (isReloading) yield break;
         if (bulletInMagazine == gunData.magazineSize) yield break;
+        if (totalBulletsLeft == 0) yield break;
 
         isReloading = true;
         rig.weight = 0f;
@@ -95,5 +104,12 @@ public class Weapon : MonoBehaviour
             totalBulletsLeft -= gunData.magazineSize - bulletInMagazine;
             bulletInMagazine = gunData.magazineSize;
         }
+
+        UpdateAmmoUI();
+    }
+
+    public void UpdateAmmoUI()
+    {
+        ammoText.text = bulletInMagazine + " / " + totalBulletsLeft;
     }
 }

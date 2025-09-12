@@ -14,6 +14,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     bool isDead = false;
 
+    public ParticleSystem bloodEffect;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -23,9 +25,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         health = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Vector3 hitPoint)
     {
         health -= damage;
+        Instantiate(bloodEffect, hitPoint, Quaternion.identity);
 
         if(health <= 0)
         {
