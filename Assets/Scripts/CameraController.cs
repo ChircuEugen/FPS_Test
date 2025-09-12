@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
         playerInput = target.GetComponentInParent<InputReader>();
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         float mouseX = playerInput.lookAction.ReadValue<Vector2>().x * sensitivity;
         float mouseY = playerInput.lookAction.ReadValue<Vector2>().y * sensitivity;

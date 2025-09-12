@@ -52,7 +52,8 @@ public class Weapon : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(screenCenter);
             if (Physics.Raycast(ray, out RaycastHit hit, 40, damageableLayer))
             {
-                Debug.Log("Something");
+                IDamageable enemyHealth = hit.transform.GetComponent<IDamageable>();
+                enemyHealth.TakeDamage(gunData.damage);
             }
         }
     }
@@ -75,6 +76,7 @@ public class Weapon : MonoBehaviour
     public IEnumerator ReloadGun()
     {
         if (isReloading) yield break;
+        if (bulletInMagazine == gunData.magazineSize) yield break;
 
         isReloading = true;
         rig.weight = 0f;
