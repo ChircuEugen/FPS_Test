@@ -20,6 +20,8 @@ public class PlayerShooter : MonoBehaviour
         cam = Camera.main.transform;
         weapons = GetComponentsInChildren<Weapon>(true);
         playerInput = GetComponent<InputReader>();
+        LoadAmmoData();
+        weapons[currentWeapon].UpdateAmmoUI();
     }
 
     private void Update()
@@ -70,7 +72,7 @@ public class PlayerShooter : MonoBehaviour
         weapons[currentWeapon].RestoreAmmo(value);
     }
 
-    private void LoadAmmoData()
+    public void LoadAmmoData()
     {
         for(int i=0; i<weapons.Length; i++)
         {
@@ -78,11 +80,11 @@ public class PlayerShooter : MonoBehaviour
         }
     }
 
-    private void SaveAmmoData()
+    public void SaveAmmoData()
     {
         for (int i = 0; i < weapons.Length; i++)
         {
-            weapons[i].LoadAmmo(i);
+            weapons[i].SaveAmmo(i);
         }
     }
 

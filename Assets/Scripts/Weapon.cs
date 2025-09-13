@@ -38,6 +38,7 @@ public class Weapon : MonoBehaviour
         playerAnimator = GetComponentInParent<Animator>();
         audioSource = GetComponent<AudioSource>();
         screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+        UpdateAmmoUI();
 
     }
 
