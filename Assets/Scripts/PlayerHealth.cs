@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 public class PlayerHealth : MonoBehaviour, IDamageable
@@ -17,6 +16,8 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public HealthBar healthBar;
 
     bool isDead = false;
+
+    public static Action OnPlayerDeath;
 
     private void Start()
     {
@@ -50,5 +51,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         rig.weight = 0f;
         animator.SetLayerWeight(1, 0f);
         cameraLookPoint.transform.localPosition = new Vector3(-0.2f, 0.55f, -1f);
+
+        OnPlayerDeath?.Invoke();
     }
 }

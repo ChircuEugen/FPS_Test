@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,6 +14,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     bool isDead = false;
 
     public ParticleSystem bloodEffect;
+
+    public static Action OnEnemyDeath;
 
     private void Start()
     {
@@ -44,5 +45,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         animator.SetTrigger("Died");
         manager.enabled = false;
         agent.enabled = false;
+
+        OnEnemyDeath?.Invoke();
+
     }
 }
