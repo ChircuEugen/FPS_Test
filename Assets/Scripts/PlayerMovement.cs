@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     public float speed = 3f;
+    public float runSpeed = 6f;
 
 
     void Start()
@@ -44,7 +45,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movementInput = transform.right * playerInput.moveInput.ReadValue<Vector2>().x + transform.forward * playerInput.moveInput.ReadValue<Vector2>().y;
         movementInput.Normalize();
 
-        if(movementInput != Vector3.zero)
+        bool isSprinting = playerInput.runAction.IsPressed();
+        float currentSpeed = isSprinting ? runSpeed : speed;
+
+        if (movementInput != Vector3.zero)
         {
             animator.SetBool("IsMoving", true);
 
@@ -59,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsMoving", false);
         }
 
-        controller.Move(movementInput * speed * Time.deltaTime);
+        controller.Move(movementInput * currentSpeed * Time.deltaTime);
 
         transform.eulerAngles = new Vector3(0, cam.eulerAngles.y, 0);
 

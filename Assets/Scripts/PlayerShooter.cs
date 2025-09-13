@@ -65,4 +65,25 @@ public class PlayerShooter : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void IncreaseAmmo(int value)
+    {
+        weapons[currentWeapon].RestoreAmmo(value);
+    }
+
+    private void LoadAmmoData()
+    {
+        for(int i=0; i<weapons.Length; i++)
+        {
+            weapons[i].LoadAmmo(i);
+        }
+    }
+
+    private void SaveAmmoData()
+    {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].LoadAmmo(i);
+        }
+    }
+
 }

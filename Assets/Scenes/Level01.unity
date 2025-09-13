@@ -15492,6 +15492,74 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1001 &7387097689113933302
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4867713367985059388, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_Name
+      value: Ammo Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.403
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771793358012647818, guid: 0ba4d82425068f2448695572120e9539,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ba4d82425068f2448695572120e9539, type: 3}
 --- !u!1 &7401684065013424531
 GameObject:
   m_ObjectHideFlags: 0
@@ -16162,6 +16230,7 @@ GameObject:
   - component: {fileID: 8990469147145715538}
   - component: {fileID: 8990469147145715537}
   - component: {fileID: 8990469147145715536}
+  - component: {fileID: 8990469147145715542}
   - component: {fileID: 8990469147145715535}
   - component: {fileID: 8990469147145715534}
   - component: {fileID: 8990469147145715533}
@@ -16322,6 +16391,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   speed: 3
+  runSpeed: 6
 --- !u!114 &8990469147145715534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16552,6 +16622,33 @@ MonoBehaviour:
   cameraLookPoint: {fileID: 154668877}
   rig: {fileID: 501543508}
   healthBar: {fileID: 1898979769}
+--- !u!54 &8990469147145715542
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615175680420406774}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &9044121311722345174
 GameObject:
   m_ObjectHideFlags: 0
@@ -16685,3 +16782,4 @@ SceneRoots:
   - {fileID: 1265940452}
   - {fileID: 1052043027}
   - {fileID: 426898061}
+  - {fileID: 7387097689113933302}

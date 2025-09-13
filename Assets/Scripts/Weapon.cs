@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     public Transform muzzlePosition;
 
     public int bulletInMagazine;
-    public int totalBulletsLeft = 100;
+    public int totalBulletsLeft;
 
     private float timer = 0;
     private bool isReloading = false;
@@ -108,8 +108,24 @@ public class Weapon : MonoBehaviour
         UpdateAmmoUI();
     }
 
+    public void RestoreAmmo(int value)
+    {
+        totalBulletsLeft += value;
+        UpdateAmmoUI();
+    }
+
     public void UpdateAmmoUI()
     {
         ammoText.text = bulletInMagazine + " / " + totalBulletsLeft;
+    }
+
+    public void LoadAmmo(int index)
+    {
+        totalBulletsLeft = PlayerPrefs.GetInt("Gun" + index, 120);
+    }
+
+    public void SaveAmmo(int index)
+    {
+        PlayerPrefs.SetInt("Gun" + index, totalBulletsLeft);
     }
 }
