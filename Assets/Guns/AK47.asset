@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AK47
   m_EditorClassIdentifier: 
   damage: 35
-  fireRate: 0.4
+  fireRate: 0.3
   magazineSize: 30
   muzzleFlash: {fileID: 170173508735653080, guid: 4d563a85be06bd7438c2ff76b76dacf8,
     type: 3}

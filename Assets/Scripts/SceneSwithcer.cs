@@ -14,6 +14,11 @@ public class SceneSwithcer : MonoBehaviour
         SceneManager.LoadScene("Level01");
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void ExitButton()
     {
         Application.Quit();

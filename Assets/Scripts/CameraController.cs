@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     private InputReader playerInput;
 
-    [SerializeField] private float sensitivity = 3f;
+    [SerializeField] private float sensitivity = 0.2f;
 
     public Transform target;
 

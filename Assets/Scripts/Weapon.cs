@@ -122,7 +122,7 @@ public class Weapon : MonoBehaviour
 
     public void LoadAmmo(int index)
     {
-        totalBulletsLeft = PlayerPrefs.GetInt("Gun" + index, 120);
+        totalBulletsLeft = PlayerPrefs.GetInt("Gun" + index, 100);
     }
 
     public void SaveAmmo(int index)

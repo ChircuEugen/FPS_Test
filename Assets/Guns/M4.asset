@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65aa43bce23cfeb4f80a39aa87f08335, type: 3}
   m_Name: M4
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 25
   fireRate: 0.2
   magazineSize: 30
   muzzleFlash: {fileID: 170173508735653080, guid: 4d563a85be06bd7438c2ff76b76dacf8,

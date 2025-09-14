@@ -48,5 +48,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         OnEnemyDeath?.Invoke();
 
+        Destroy(gameObject, 3f);
+
     }
 }
