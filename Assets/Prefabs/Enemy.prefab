@@ -155,8 +155,8 @@ MonoBehaviour:
   player: {fileID: 0}
   patrolPointA: {x: 0, y: 0, z: 0}
   patrolPointB: {x: 0, y: 0, z: 0}
-  chaseTriggerDistance: 4
-  forgetDistance: 7
+  chaseTriggerDistance: 4.5
+  forgetDistance: 8
   attackDistance: 1.4
   attackRate: 1.6
   enemyDamage: 25
